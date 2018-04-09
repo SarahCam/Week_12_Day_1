@@ -1,21 +1,42 @@
 
 
 const app = function(){
-  // 1. Create 'parent' ul and its className (cat)
+  // 1. Create parent 'ul' and its className (cat)
+  let cat = document.createElement("ul");
+  cat.classList.add("cat");
 
-  // 2. Create 'name' child li and its text: 'Name: xyz'
+  // 2. Create 'child 'li' for name and its text: 'Name: xyz'
+  let name = document.createElement("li");
+  name.innerText = "Name: Moggy";
 
-  // 3. Create 'food' child li and its text: 'Favourite food: abc'
+  // 3. Create 'child 'li' for food and its text: 'Favourite food: abc'
+  let food = document.createElement("li");
+  food.innerText = "Favourite food: Beans"
 
-  // 4. Create 'image' child li and its img
+  // 4. Create child 'li' for picture and its img
+  let picture = document.createElement("li");
 
-  // 5. Append the 'name' to the 'parent' cat
-  // 5. Append the 'food' to the 'parent' cat
-  // 5. Append the 'image' to the 'parent' cat
+  let image = document.createElement("img");
+  image.width = "500";
+  image.src = "http://66.media.tumblr.com/7c5784ea89369c780e782bf10c60315a/tumblr_npb0hlYwhV1u63jaco1_1280.jpg"
 
-  // 6. Add the 'parent' cat to the list of cats
+  // 5. Append the img 'image' to the 'picture' li
+  picture.appendChild(image);
 
-  debugger;
+  // 5. Append the li 'name' to the 'cat' ul
+  cat.appendChild(name);
+
+  // 5. Append the li 'food' to the 'cat' ul
+  cat.appendChild(food);
+
+  // 5. Append the li 'picture' to the 'cat' ul
+  cat.appendChild(picture);
+
+  // 6. Add the 'ul' cat to the list of cats
+  let cats = document.querySelector("#cats");
+  cats.appendChild(cat);
+
+  // debugger;
 }
 
 window.onload = app;
