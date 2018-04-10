@@ -19,26 +19,6 @@ const createIMG = function(url, width){
   return img;
 }
 
-const createCat = function(){
-  return createUL("cat");
-}
-
-const createName = function(name){
-  return createLI("Name: " + name);
-}
-
-const createFood = function(food){
-  return createLI("Favourite food: " + food);
-}
-
-const createPicture = function(){
-  return createLI();
-}
-
-const createImage = function(picture){
-  return createIMG(picture, "500");
-}
-
 const appendElements = function(cat, catName, catFood, catPicture, catImage){
   catPicture.appendChild(catImage);
   cat.appendChild(catName);
@@ -49,11 +29,11 @@ const appendElements = function(cat, catName, catFood, catPicture, catImage){
 }
 
 const addCat = function(name, food, picture){
-  const cat = createCat();
-  const catName = createName(name);
-  const catFood = createFood(food);
-  const catPicture = createPicture();
-  const catImage = createImage(picture);
+  const cat = createUL("cat");
+  const catName = createLI("Name: " + name);
+  const catFood = createLI("Favourite food: " + food);
+  const catPicture = createLI();
+  const catImage = createIMG(picture, "500");
   appendElements(cat, catName, catFood, catPicture, catImage);
 }
 
