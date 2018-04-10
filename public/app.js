@@ -1,31 +1,42 @@
+const createUL = function(className){
+  let ul = document.createElement("ul");
+  ul.classList.add(className);
+  return ul;
+}
+
+const createLI = function(text){
+  let li = document.createElement("li");
+  if (text){
+    li.innerText = text;
+  }
+  return li;
+}
+
+const createIMG = function(url, width){
+  let img = document.createElement("img");
+  img.width = width;
+  img.src = url;
+  return img;
+}
+
 const createCat = function(){
-  let cat = document.createElement("ul");
-  cat.classList.add("cat");
-  return cat;
+  return createUL("cat");
 }
 
 const createName = function(name){
-  let myName = document.createElement("li");
-  myName.innerText = "Name: " + name;
-  return myName;
+  return createLI("Name: " + name);
 }
 
 const createFood = function(food){
-  let myFood = document.createElement("li");
-  myFood.innerText = "Favourite food: " + food;
-  return myFood;
+  return createLI("Favourite food: " + food);
 }
 
 const createPicture = function(){
-  let myPicture = document.createElement("li");
-  return myPicture;
+  return createLI();
 }
 
 const createImage = function(picture){
-  let myImage = document.createElement("img");
-  myImage.width = "500";
-  myImage.src = picture;
-  return myImage;
+  return createIMG(picture, "500");
 }
 
 const appendElements = function(cat, catName, catFood, catPicture, catImage){
