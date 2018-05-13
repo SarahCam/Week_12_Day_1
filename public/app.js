@@ -9,6 +9,7 @@ const createLI = function(text){
   if (text){
     li.innerText = text;
   }
+  // li.innerText = '${label}: ${text}';  // alternative way, if pass label too
   return li;
 }
 
